@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.pagination-active {
+  background-color: #ff9900 !important;
+  color: #fff !important;
+  border-radius: 0.375rem; /* same as Tailwind rounded */
+}
+

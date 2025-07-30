@@ -1,0 +1,51 @@
+npm install axios react-router-dom@6 react-spinners react-icons react-paginate
+
+
+
+[App.jsx]  // Main React app, sab kuch yahin se start hota hai
+  |
+  |-- [Navbar]  // Har page par dikhne wala navigation bar (links, logout, admin)
+  |
+  |-- [Routes]  // SPA routing, har page/component ka route yahan set hota hai
+        |
+        |-- [Home.jsx]  // User ka home page, posts grid aur post create form yahan dikhte hain
+        |      |
+        |      |-- [PostForm.jsx]  // Nayi post create karne ka form
+        |      // Sirf login user ko dikhate hain, taki koi bhi guest post na kar sake
+        |      // onPost prop se parent ko batate hain ke post create ho gayi, list refresh ho jaye
+        |      |
+        |      |-- [PostList.jsx]  // Sare posts grid me dikhte hain (YouTube style)
+        |             |
+        |             |-- [PostItem.jsx]  // Har post ka card (title, image, likes, comments count)
+        |             // PostItem me Link use hota hai, taki user post detail page par ja sake
+        |
+        |-- [Login.jsx]  // Login page, user login karta hai
+        |   // setUser prop se parent (App.jsx) me user state update hoti hai
+        |
+        |-- [Register.jsx]  // Register page, naya user account bana sakta hai
+        |
+        |-- [Admin.jsx]  // Admin dashboard, sirf admin user ke liye
+        |      |
+        |      |-- [Table of Posts]  // Sare posts ki table (approved, pending, rejected)
+        |             |-- [View (Link to PostDetail)]  // Har post ke sath view button, post detail page par le jata hai
+        |             |-- [Delete, Approve, Reject Buttons]  // Admin actions, post ko manage karne ke liye
+        |      // Admin.jsx me getAllPosts, deletePost, approvePost, rejectPost APIs use hoti hain
+        |
+        |-- [PostDetail.jsx]  // Ek post ki detail dikhata hai (title, image, content, likes, dislikes, share)
+        |      |
+        |      |-- [CommentList.jsx]  // Us post ke sare comments dikhata hai
+        |             |-- [Comment Form]  // Naya comment add karne ka form (sirf login user ke liye)
+        |             |-- [Comments List]  // Sare comments, user name, date/time ke sath
+        |      // PostDetail me getPost, likePost, dislikePost APIs use hoti hain
+        |
+        |-- [404 Not Found]  // Agar koi route match na ho, to yeh page show hota hai
+
+
+
+
+
+
+
+
+
+        
